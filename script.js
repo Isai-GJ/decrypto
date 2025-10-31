@@ -179,7 +179,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const allButtons = document.querySelectorAll('button');
     allButtons.forEach(button => {
         button.addEventListener('click', () => {
-            playSound('sounds/click.wav');
+            playSound('sounds/click.mp3');
         });
     });
 
