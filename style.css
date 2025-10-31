@@ -1,0 +1,263 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    background-color: #121212; /* Fondo general oscuro */
+    color: #FFFFFF;
+}
+
+.container {
+    background-color: #1E1E1E; /* Contenedor principal un poco más claro */
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(255, 255, 255, 0.05);
+    text-align: center;
+    width: 90%;
+    max-width: 800px;
+}
+
+.screen {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.hidden {
+    display: none;
+}
+
+h1, h2, h3 {
+    color: #FFFFFF;
+    margin-bottom: 15px;
+}
+
+h1 {
+    font-size: 4.5em; /* Tamaño grande para imponer */
+    text-transform: uppercase; /* Todo en mayúsculas */
+    margin-bottom: 25px; /* Un poco más de espacio debajo */
+}
+
+button {
+    background-color: #FFFFFF;
+    color: #000000;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.1em;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    margin: 5px;
+}
+
+button:hover {
+    background-color: #DDDDDD;
+    transform: translateY(-2px);
+}
+
+button:active {
+    transform: translateY(0);
+}
+
+.mode-options {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 20px;
+    width: 100%; /* Asegura que el contenedor ocupe todo el ancho */
+}
+
+.mode-options button {
+    flex: 1; /* Hace que ambos botones ocupen el mismo espacio */
+}
+
+/* Estilos para hacer más grandes los botones del menú y selección de modo */
+#mode-selection button {
+    padding: 16px 32px; /* Aumentamos el padding para hacerlos más grandes */
+    font-size: 1.3em;   /* Hacemos la fuente más grande */
+}
+
+.word-cards-container {
+    display: flex;
+    flex-wrap: nowrap; /* Evita que las tarjetas salten a la siguiente línea */
+    justify-content: center;
+    gap: 20px;
+    margin: 20px 0;
+    overflow-x: auto; /* Permite scroll horizontal si es necesario */
+    padding-bottom: 10px; /* Espacio para la barra de scroll si aparece */
+}
+
+.word-card, .code-card, .counter-card {
+    background-color: #2a2a2a;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.code-card {
+    cursor: pointer; /* Indicar que la tarjeta es clickeable */
+    user-select: none; /* Evitar que el texto se seleccione al hacer clic */
+    width: 250px; /* Ancho fijo para la tarjeta */
+    height: 150px; /* Alto fijo para la tarjeta */
+}
+
+.counter-card {
+    padding: 15px; /* Reducimos el padding para hacerla más pequeña */
+    width: 180px;  /* Ancho fijo para que ambas tarjetas sean iguales */
+    gap: 5px;      /* Espacio entre los elementos internos */
+}
+
+.word-card {
+    width: 120px;  /* Ancho fijo para hacerla más cuadrada */
+    height: 120px; /* Alto fijo para hacerla más cuadrada */
+}
+
+.card-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px; /* Espacio entre la tarjeta y el número */
+}
+
+.card-number {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.word-card p, .code-card span, .counter-card span {
+    font-size: 1.8em;
+    font-weight: bold;
+    color: #FFFFFF;
+}
+
+/* Usar fuente Consolas para los elementos clave del juego */
+h1,
+.word-card p,
+.code-card span,
+.card-number {
+    font-family: Consolas, monospace;
+}
+
+/* Unificar el tamaño de fuente para el código y el '?' */
+.code-card span {
+    font-size: 3.5em;
+}
+
+.counter-card h3 {
+    font-size: 1em; /* Reducimos el tamaño del título */
+    margin: 0;
+}
+
+.counters {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-bottom: 20px;
+}
+
+.counter-controls button {
+    font-size: 1.2em; /* Mantenemos el tamaño de la fuente del botón */
+    width: 35px;       /* Ancho fijo para el botón */
+    height: 35px;      /* Alto fijo para el botón */
+    padding: 0;        /* Quitamos el padding para que el tamaño sea exacto */
+    line-height: 35px; /* Centramos el texto verticalmente */
+    text-align: center;/* Centramos el texto horizontalmente */
+    margin: 0 5px;     /* Ajustamos el margen */
+}
+
+.code-card-container {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.game-controls {
+    display: flex;
+    gap: 20px;
+    width: 100%;
+    margin-top: 10px;
+}
+
+.game-controls button {
+    flex: 1;
+}
+
+#team-switch-btn {
+    padding: 8px 16px;
+    font-size: 0.9em;
+    margin-top: 20px; /* Espacio sobre el botón */
+}
+
+.timer-display {
+    font-family: Consolas, monospace;
+    font-size: 4em;
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+/* Estilo para botones desactivados */
+button:disabled {
+    background-color: #555;
+    cursor: not-allowed;
+}
+
+/* --- Estilos de Tema para Modo Palabras --- */
+
+/* Transición suave para el cambio de tema en el contenedor */
+.container {
+    transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+
+/* Tema Blanco (cuando la clase .team-white-theme está presente) */
+.container.team-white-theme {
+    background-color: #f0f0f0;
+    color: #000000;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.container.team-white-theme h1,
+.container.team-white-theme h2,
+.container.team-white-theme h3 {
+    color: #000000;
+}
+
+.container.team-white-theme .word-card,
+.container.team-white-theme .counter-card,
+.container.team-white-theme .code-card {
+    background-color: #FFFFFF;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.container.team-white-theme .word-card p,
+.container.team-white-theme .counter-card span,
+.container.team-white-theme .card-number,
+.container.team-white-theme .code-card span {
+    color: #000000;
+}
+
+.container.team-white-theme .timer-display {
+    color: #000000;
+}
+
+/* En el tema blanco, todos los botones son negros con texto blanco */
+.container.team-white-theme button {
+    background-color: #000000;
+    color: #FFFFFF;
+}
+
+.container.team-white-theme button:hover {
+    background-color: #333333; /* Un gris oscuro para el hover */
+}
+
+.container.team-white-theme button:disabled {
+    background-color: #aaa;
+    color: #555;
+}
